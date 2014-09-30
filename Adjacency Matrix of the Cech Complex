@@ -1,0 +1,18 @@
+Adjacency Matrix of the Cech Complex
+----------------------------------------------
+
+x=read.csv('MOD_EXP.csv')
+E=.05
+x=x[,-19]
+G=matrix(1:(nrow(x)^2),ncol=nrow(x))*0
+
+for(i in 1:nrow(x)){
+  for(j in i+1:ncol(x)){
+     if(sqrt(sum((x[i,]-x[j,])^2))<2*E)
+     {G[i,j]=1}
+    }
+  }
+  
+  
+
+
